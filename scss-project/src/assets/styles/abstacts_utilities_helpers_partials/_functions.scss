@@ -1,0 +1,26 @@
+@use "sass:color";
+
+@function sum($left, $right) {
+    @return $left + $right;
+}
+
+@function em($pixels, $context) {
+    @return ($pixels / $context) * 1em;  // / divisition is deprecated use calc is 
+}
+
+@function col-width($columns: 12, $page-width: 100%, $gap: 1%) {
+    @return ($page-width - $gap*($columns - 1)) / $columns;
+  }
+  
+  @function strip-unit($value) {
+    
+    @return $value / ($value*0 + 1);
+  }
+
+  // modules
+  button {
+    $primary-color: #6b717f;
+    color: $primary-color;
+    /* using the funciton scale */
+    border: 1px solid color.scale($primary-color, $lightness: 20%);
+  }

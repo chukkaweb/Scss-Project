@@ -1,0 +1,161 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/abstacts_utilities_helpers_partials/mixins",
+  "assets/styles/abstacts_utilities_helpers_partials/functions",
+  "assets/styles/abstacts_utilities_helpers_partials/variables",
+  "assets/styles/abstacts_utilities_helpers_partials/variables-colors";
+
+  
+body,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+// ========== Variables =======
+body {
+  background-color: $body-background-color;
+  color: $text-color;
+  // padding: em(12px,16px);
+}
+
+// ========== mixins =======
+
+header {
+  ul {
+    li {
+      @include link;
+      list-style-type: none;
+      // padding: em(16px,20px);
+      a {
+        text-decoration: none;
+        &:hover {
+          // & will use if element or class having anther class
+          color: darken($link-color, 15%); // darken is the default method
+        }
+        @include large-text;
+      }
+    }
+  }
+}
+// mixin with arguments
+button {
+  // @include box($radius:6px, $border:1px solid #f0f);
+  @include box(
+    $border: 1px solid #f0f
+  ); // here dollar will tell can pass particular(argument $border) value also  then radius default value will assign
+  // @include box(6px, 1px solid #f0f);
+  @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
+}
+
+@include apply-to-ie-6 {
+  // here it can be apply to particular browser and content
+  body {
+    font-size: 125%;
+  }
+}
+
+// ========== media queries =======
+.home-page {
+  width: $content-width;
+
+  @include medium-large-screens {
+    width: auto;
+    max-width: $content-width;
+  }
+  @include medium-screens {
+    width: auto;
+    max-width: 500px;
+  }
+
+  @include small-screens {
+    width: auto;
+    max-width: 360px;
+  }
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ========== inheritance =======
+// seems to one extend allowd in one class
+%highlight {
+  font-style: italic;
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: $text-color;
+}
+
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: $text-color;
+  @extend %highlight; // we can use this way also 
+}
+
+button {
+  @extend %message-shared;
+}
+
+.home-page {
+  @extend %message-shared;
+}
+
+// ========== font =======
+h1, h2, h3, h4 {
+  font-family: $headline-font;
+}
+
+
+// ========== loops =======
+@for $i from 1 through 5 {
+  .paragraph-#{$i}{
+    font-size: 5px*$i;
+  }
+  .col-#{$i}{
+    width: $i * 2em;
+  }
+}
+
+/* $colors is a map here */
+$colors: (color1: gray, color2: pink, color3: yellow);
+@each $key, $value in $colors {
+ .#{$value}-background {
+  background-color: $value;
+ }
+}
+
+$speakers: bob-banker, patty-plume, sandra-smith;
+@each $speaker in $speakers {
+  .#{$speaker}-profile {
+    background-image: url('/img/#{$speaker}.png');
+  }
+}
+
+$font-sizes: (tiny: 8px, small: 11px, medium: 13px, large: 18px);
+@each $name, $size in $font-sizes {
+  .#{$name} {
+    font-size: $size;
+  }
+}
+
+$j: 8;
+@while $j >= 2 {
+  .picture-#{$j} {
+    width: $j * 10%;
+  }
+  $j: $j - 2;
+}
+
+
+
+
+// footer
+#footer {
+  clear: both;
+  height: $footer-height;
+  background-color: $ternary-color;
+  @include rogers-rovers { // cross check not get this 
+    border-top: 5px solid darken($ternary-color, 15%);
+  }
+}
+
+// modules
