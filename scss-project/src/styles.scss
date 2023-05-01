@@ -1,14 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import "assets/styles/abstacts_utilities_helpers_partials/mixins",
-  "assets/styles/abstacts_utilities_helpers_partials/functions",
-  "assets/styles/abstacts_utilities_helpers_partials/variables",
-  "assets/styles/abstacts_utilities_helpers_partials/variables-colors";
 
-  
+// modules 
+@import 'assets/styles/base_abstacts_utilities_helpers_partials/main';
+@import 'assets/styles/components/component'; // footer styles not working cross check is write or wronf
+// @import 'assets/styles/components/buttons';
 body,
 ul {
   padding: 0;
   margin: 0;
+}
+
+
+li {
+  color: getColorAlpha('green', 'light');
 }
 
 // ========== Variables =======
@@ -159,3 +163,61 @@ $j: 8;
 }
 
 // modules
+
+
+
+.baner {
+  background-image: url('assets/images/image-01.jpg');
+}
+@media screen and (min-width:980px) {
+  .baner{
+    background-image: url(assets/images/image-01-tablet.jpg);
+  }
+}
+@media screen and (min-width:1280px) {
+  .baner{
+    background-image: url(assets/images/image-01-desktop.jpg);
+  }
+}
+
+.team {
+  background-image: url('assets/images/image-09.jpg');
+}
+@media screen and (min-width:980px) {
+  .team{
+    background-image: url(assets/images/image-09-tablet.jpg);
+  }
+}
+@media screen and (min-width:1280px) {
+  .team{
+    background-image: url(assets/images/image-09-desktop.jpg);
+  }
+}
+
+.testimonials {
+  background-image: url('assets/images/image-09.jpg');
+}
+@media screen and (min-width:980px) {
+  .testimonials {
+    background-image: url(assets/images/image-09-tablet.jpg);
+  }
+}
+@media screen and (min-width:1280px) {
+  .testimonials {
+    background-image: url(assets/images/image-09-desktop.jpg);
+  }
+}
+
+.footer {
+  background-image: url('assets/images/image-11.jpg');
+}
+@media screen and (min-width:980px) {
+  .footer {
+    background-image: url(assets/images/image-11-tablet.jpg);
+  }
+}
+@media screen and (min-width:1280px) {
+  .footer {
+    background-image: url(assets/images/image-11-desktop.jpg);
+  }
+}

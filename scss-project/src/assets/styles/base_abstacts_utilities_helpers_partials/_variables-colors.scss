@@ -30,3 +30,18 @@ $theme: Light;
     $menu-item-color: white;
   }
   
+  $my-colors: ( // i think to declareing group of values we are using ()
+    'default-blue': #0071ce,
+    'blue': #064f8e,
+    'yellow': #f79428,
+    'light-blue': #1888c8,
+    'green': #54a546,
+    'red': #C82022,
+    'pink': #b51e6d,
+    'orange': #e54e26
+  );
+  
+  $my-opacity: (
+    "dark": 1,
+    "light": 0.8
+  );
