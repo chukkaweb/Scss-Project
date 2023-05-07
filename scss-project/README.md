@@ -1,4 +1,13 @@
 # ScssProject
+TODO
+SCSS
+ANGULAR LATEST
+UNIT TESTING / karma (code review)
+NGRX
+
+NOTES
+ng g m scss --routing ---> module creation 
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
