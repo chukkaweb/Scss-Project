@@ -8,8 +8,7 @@ import { BaseUrl } from './consts/base-urls';
 })
 export class AppComponent implements OnInit {
   homeUrl:BaseUrl = BaseUrl.HOME; //BaseUrl.HOME why dont we use directly this // cross check
-  title = 'scss-project';
+   title = 'scss-project';
   ngOnInit(): void {
-  
   }
 }

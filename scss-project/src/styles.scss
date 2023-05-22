@@ -1,9 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+// table content 
+// modules
+// Variables
+// mixins/nesting/parent selectors 
+// media queries 
+// inheritance
+// loops
+
+
+
 
 // modules 
 @import 'assets/styles/base_abstacts_utilities_helpers_partials/main';
 @import 'assets/styles/components/component'; // footer styles not working cross check is write or wronf
 // @import 'assets/styles/components/buttons';
+
+
 body,
 ul {
   padding: 0;
@@ -12,7 +23,9 @@ ul {
 
 
 li {
-  color: getColorAlpha('green', 'light');
+  color: getColorAlpha('default-blue', 'light');
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 // ========== Variables =======
