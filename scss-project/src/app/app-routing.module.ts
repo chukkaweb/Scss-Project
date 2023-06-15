@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'scss', loadChildren: () => import('src/app/features/scss/scss.module').then(
+    path:'', loadChildren: () => import('src/app/features/scss/scss.module').then(
     module => module.ScssModule)
   },
   {
