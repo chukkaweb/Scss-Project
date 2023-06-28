@@ -34,12 +34,12 @@ describe('Testing1Component', () => { // 	describe() function block define a 
   });
 
    it('should check incremented value is greater than zero', () => {
- // Arrange - dependency injection
- let counterComponent: Testing1Component = new Testing1Component();
- // Act - call a method/function
- const curCounterValue = 1;
-//  const curCounterValue = counterComponent.increaseCounter();
- // Assert - 3. expect - Create an expectation/assertion for a spec
- expect(curCounterValue).toBeGreaterThan(0);
+      // Arrange - dependency injection
+      let counterComponent: Testing1Component = new Testing1Component();
+      // Act - call a method/function
+      const curCounterValue = 1;
+      //  const curCounterValue = counterComponent.increaseCounter();
+      // Assert - 3. expect - Create an expectation/assertion for a spec
+      expect(curCounterValue).toBeGreaterThan(0);
  })
 });
