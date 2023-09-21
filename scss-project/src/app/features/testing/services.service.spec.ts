@@ -52,4 +52,17 @@ describe('ServicesService', () => {
     req.flush(dummyCustomer); //  req.flush() method is called on the HttpRequest object that is intercepted by the HttpTestingController. It allows you to specify the response data or error that should be returned as a result of the intercepted request.
   });
 
+  it('should add a new customer', () => {
+    const newCustomer = { name: 'John Doe', email: 'john@example.com' };
+    service.addCustomer(newCustomer).subscribe((customer)=>{
+      // expect(customer.id).toBe(1);
+      expect(customer.id).toBeTruthy();
+    });
+    const req = httpMock.expectOne('api/customers');
+    expect(req.request.method).toBe('POST');
+    req.flush({...newCustomer,id:1});
+  });
+
+
+
 });

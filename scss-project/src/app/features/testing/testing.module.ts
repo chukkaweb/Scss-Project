@@ -18,8 +18,8 @@ import { ServicesComponent } from './services/services.component';
     CommonModule,
     TestingRoutingModule,
     SharedModule
-    
-  ],bootstrap:[
+  ],
+  bootstrap:[
     Testing1Component
   ]
 })

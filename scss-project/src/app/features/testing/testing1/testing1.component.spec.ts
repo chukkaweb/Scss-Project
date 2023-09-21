@@ -4,7 +4,7 @@ import { Testing1Component } from './testing1.component';
 //  test method into three sections: arrange, act and assert. It also makes the test more clean and readable.
 
 // describe - define test suite, Create a group of specs (often called a suite)
-describe('Testing1Component', () => { // 	describe() function block define a test suite (the group of related tests)
+describe('Testing1Component', () => { // describe() function block define a test suite (the group of related tests)
   let component: Testing1Component;
   let fixture: ComponentFixture<Testing1Component>; // The ComponentFixture properties and methods provide access to the component, its DOM representation, and aspects of its Angular environment.
 
