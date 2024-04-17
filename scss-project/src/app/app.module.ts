@@ -4,21 +4,29 @@ import { BrowserModule } from '@angular/platform-browser';
 // modules 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 // componetns
 import { AppComponent } from './app.component';
 import { PostsComponent } from './features/advanced-angular/posts/posts.component';
+import { FormComponent } from './features/ngrx/basic/form/form.component';
+import { TableComponent } from './features/ngrx/basic/table/table.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
-    
+    PostsComponent,
+    FormComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
