@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Customer } from './model';
+import { Customer } from './models/model';
+import { Course } from './models/course';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class ServicesService {
   private apiUrl = 'api/customers';
   
   constructor(private http: HttpClient) { }
+
+  // customers 
 
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.apiUrl);
@@ -33,5 +36,13 @@ export class ServicesService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
   }
+
+  // cources 
+
+  findCourseById(courseId:number): Observable<Course>{
+      return this.http.get<Course>(`/api/courses/${courseId}`);
+  }
+  
+
 
 }

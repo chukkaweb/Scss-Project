@@ -24,8 +24,7 @@ onSubmit(): void {
   if (this.customerForm.invalid) {
     return;
   }
-  // Submit form data
-  console.log(this.customerForm.value);
+
 
   // Reset form
   this.customerForm.reset();

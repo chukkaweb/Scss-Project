@@ -3,8 +3,8 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { ServicesService } from './services.service';
 
 describe('ServicesService', () => {
-  let service: ServicesService;
-  let httpMock: HttpTestingController;
+  let service: ServicesService,
+   httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,11 +15,7 @@ describe('ServicesService', () => {
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  afterEach(() => {
-    httpMock.verify(); // to ensure that there are no outstanding requests or unfulfilled expectations
-  });
-
-  it('should be created', () => { //  it() or test() functions to define the tests 
+ it('should be created', () => { //  it() or test() functions to define the tests 
     expect(service).toBeTruthy();
   });
 
@@ -49,7 +45,9 @@ describe('ServicesService', () => {
 
     const req = httpMock.expectOne('api/customers/1');
     expect(req.request.method).toBe('GET');
-    req.flush(dummyCustomer); //  req.flush() method is called on the HttpRequest object that is intercepted by the HttpTestingController. It allows you to specify the response data or error that should be returned as a result of the intercepted request.
+    //  req.flush() method is called on the HttpRequest object that is intercepted by the HttpTestingController. 
+    // It allows you to specify the response data or error that should be returned as a result of the intercepted request.
+    req.flush(dummyCustomer);
   });
 
   it('should add a new customer', () => {
@@ -63,6 +61,9 @@ describe('ServicesService', () => {
     req.flush({...newCustomer,id:1});
   });
 
+  afterEach(() => {
+    httpMock.verify(); // to ensure that there are no outstanding requests or unfulfilled expectations
+  });
 
 
 });

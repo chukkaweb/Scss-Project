@@ -10,4 +10,10 @@ export interface Customer {
     district?: string;
     email?:string
   }
-  
+
+  export interface Admin {
+    id?: number;
+    name: string;
+    phoneNumber: string;
+    email?:string
+  }

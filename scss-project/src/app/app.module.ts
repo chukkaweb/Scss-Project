@@ -7,10 +7,12 @@ import { SharedModule } from './shared/shared.module';
 
 // componetns
 import { AppComponent } from './app.component';
+import { PostsComponent } from './features/advanced-angular/posts/posts.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostsComponent
     
   ],
   imports: [

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestingHeaderComponent } from './testing-header.component';
+import { PostsComponent } from './posts.component';
 
-describe('TestingHeaderComponent', () => {
-  let component: TestingHeaderComponent;
-  let fixture: ComponentFixture<TestingHeaderComponent>;
+describe('PostsComponent', () => {
+  let component: PostsComponent;
+  let fixture: ComponentFixture<PostsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TestingHeaderComponent ]
+      declarations: [ PostsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TestingHeaderComponent);
+    fixture = TestBed.createComponent(PostsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,6 +20,4 @@ describe('TestingHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  
 });
