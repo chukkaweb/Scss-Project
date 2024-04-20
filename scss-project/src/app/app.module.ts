@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { PostsComponent } from './features/advanced-angular/posts/posts.component';
 import { FormComponent } from './features/ngrx/basic/form/form.component';
 import { TableComponent } from './features/ngrx/basic/table/table.component';
+import { userReducer } from './features/ngrx/basic/userReducer';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { TableComponent } from './features/ngrx/basic/table/table.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({user:userReducer}),
     EffectsModule.forRoot([])
   ],
   providers: [],
