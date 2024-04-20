@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { getUsers, setUsers } from '../../effects/actions';
 
 @Component({
   selector: 'app-table',
@@ -8,13 +9,24 @@ import { Store } from '@ngrx/store';
 })
 export class TableComponent implements OnInit {
   user:any;
+  users:any = [];
+  error = false;
   constructor(private store:Store<any>) {};
 
   ngOnInit(): void {
-    this.store.select('user').subscribe(data=>{
-      this.user = data;
-      console.log(data)
-    })
+    this.store.dispatch(getUsers());
+    this.store.select('user').subscribe(
+      data=>{
+        this.users = data.users;
+        console.log(this.users);
+        this.error = data.apiError
+      }
+    )
+
+    // this.store.select('user').subscribe(data=>{
+    //   this.user = data;
+    //   console.log(data)
+    // })
     
   }
 }

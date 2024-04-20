@@ -10,10 +10,10 @@
 
     <tbody>
 
-        <tr>
-            <td>{{user.name}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.mobile}}</td>
+        <tr *ngFor="let item of users">
+            <td>{{item?.name}}</td>
+            <td>{{item?.email}}</td>
+            <td>{{item?.phone}}</td>
         </tr>
     </tbody>
 </table>
