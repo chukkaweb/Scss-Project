@@ -8,10 +8,10 @@ import { catchError, map, mergeMap, of } from "rxjs";
 export class userEffect {
 constructor(private actions:Actions, private us:UserService){
 }
-
+ 
 fetchUsers = createEffect(
     ()=>this.actions.pipe(
-        ofType(getUsers),        // oftype will check obserbanle emmited daya and manam pass chesina data same or not and here get user action pai api call cheyali 
+        ofType(getUsers),        // oftype will check observable emitted data and manam pass chesina data same or not and here get user action pai api call cheyali 
         mergeMap(
             ()=>this.us.getUsers().pipe(
                 map((data)=>setUsers({users:data})),
@@ -20,8 +20,6 @@ fetchUsers = createEffect(
                 )
             )
         )
-
     )
 )
-
 }

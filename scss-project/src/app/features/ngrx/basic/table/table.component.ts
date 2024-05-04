@@ -18,7 +18,6 @@ export class TableComponent implements OnInit {
     this.store.select('user').subscribe(
       data=>{
         this.users = data.users;
-        console.log(this.users);
         this.error = data.apiError
       }
     )
