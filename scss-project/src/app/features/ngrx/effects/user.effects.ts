@@ -7,9 +7,10 @@ import { catchError, map, mergeMap, of } from "rxjs";
 @Injectable()
 export class userEffect {
 constructor(private actions:Actions, private us:UserService){
-}
+}   
+
  
-fetchUsers = createEffect(
+fetchUsers = createEffect (
     ()=>this.actions.pipe(
         ofType(getUsers),        // oftype will check observable emitted data and manam pass chesina data same or not and here get user action pai api call cheyali 
         mergeMap(
