@@ -327,7 +327,8 @@ It provide methods to create components and services for unit test case.
 It allows us to test and use Angular’s DI framework.
 It allows us to test using the NgModule configuration we use in our application.
 It allows us to test user interaction via clicks and input fields
-SpyOn to mock and Stub methods in angular unit test
+
+## SpyOn to mock and Stub methods in angular unit test
 Jasmine Spies help  us to mock the execution of the Angular method.
 It’s a easy way to check a method was called or not, without leaving Subject Under Test(SUT).
 We can chain the spyOn method to get dummy return value using .and.returnvalue()
@@ -339,7 +340,8 @@ Change Detection is the backbone of the Angular framework, and each component ha
 Angular can detect when data changes in the component, and can re-render the view to display the updated data. Angular makes sure that data in the component and the view are always in sync with each other.
 Change detection means updating the view whenever data changed.
 Fixeture.detectChanges -🡪 to Identify the DOM element change 
-Debug Element & DOM events in angular unit test
+
+## Debug Element & DOM events in angular unit test
 DebugElement is an Angular class that contains all kinds of references and methods relevant to investigate an element as well as component fixture.debugElement.query(By.css(‘#h1’))
 Instead of creating an HTML element tree, Angular creates a DebugElement tree that wraps the native elements for the runtime platform.
 The nativeElement property unwraps the DebugElement and returns the platform-specific element object.
