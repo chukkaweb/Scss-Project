@@ -9,14 +9,22 @@ describe('FormsComponent', () => {
   let form:any;
 
   beforeEach(async () => {
+    // Call configureTestingModule to refine the testing module configuration for a particular set of tests by adding and removing imports, declarations (of components, directives, and pipes), and providers.
     await TestBed.configureTestingModule({
       declarations: [ FormsComponent ],
       imports:[SharedModule]
     })
-    .compileComponents();
-    fixture = TestBed.createComponent(FormsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    .compileComponents(); // Compile the testing module asynchronously after you've finished configuring it. 
+    // You must call this method if any of the testing module components have a templateUrl or styleUrls because fetching component template and style files is necessarily asynchronous. 
+
+    fixture = TestBed.createComponent(FormsComponent); // creates an instance of the FormsComponent, adds a corresponding element to
+    // test-runner DOM, and returns a ComponentFixture.
+    
+    component = fixture.componentInstance; // Access the component instance through the fixture and confirm it exists with a Jasmine expectation:
+    fixture.detectChanges(); // Trigger a change detection cycle for the component.
+    // Call it to initialize the component (it calls ngOnInit) and after your test code, change the component's data bound property values. Angular can't see that you've changed personComponent.name and won't update the name binding until you call detectChanges.
+    // Runs checkNoChanges afterwards to confirm that there are no circular updates unless called as detectChanges(false);
+    
     form = component.customerForm;
   });
 
