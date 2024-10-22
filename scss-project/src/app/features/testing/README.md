@@ -1,4 +1,4 @@
-# How to write unit tests
+<!-- # How to write unit tests
 // 1. describe - define test suite, Create a group of specs (often called a suite)
 describe('Textual description of the group', Function for Jasmine to invoke that will define inner suites specs () => {
  // 2. it - define an individual unit test case
@@ -349,4 +349,4 @@ nativeElement returns a reference to the DOM element.
 triggerEventHandler is a function that exists on Angular's DebugElement.
 
 
-
+ -->
